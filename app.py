@@ -348,6 +348,7 @@ def orders():
     totalPrice = 0
     for product in productDetails:
         totalPrice += product[5]
+        
     conn.commit()
     return render_template("orders.html", products = productDetails, totalPrice=totalPrice, loggedIn=loggedIn, firstName=firstName, noOfItems=noOfItems)
 
@@ -405,6 +406,7 @@ def updateProfile():
 def changePassword():
     if 'email' not in session:
         return redirect(url_for('loginForm'))
+    loggedIn, firstName, noOfItems = getLoginDetails()
     if request.method == "POST":
         oldPassword = request.form['oldpassword']
         oldPassword = hashlib.md5(oldPassword.encode()).hexdigest()
@@ -567,9 +569,9 @@ def checkout():
         userId = cur.fetchone()[0]
         cur.execute("SELECT products.productId, products.name, products.price, products.image, cart.qty FROM products, cart WHERE products.productId = cart.productId AND cart.userId = " + str(userId))
         products = cur.fetchall()
-    totalPrice = 0
+        
     for product in products:
-        totalPrice += (product[2] * product[4])
+        totalPrice = (product[2] * product[4])
         cur.execute("INSERT INTO orders (userId, productId, qty, totalprice, purchasedate, purchasetime) VALUES (?, ?, ?, ?, ?, ?)", (userId, product[0], product[4], totalPrice, productPurchaseDate, productPurchaseTime))
     cur.execute("DELETE FROM cart WHERE userId = " + str(userId))
     conn.commit()
