@@ -16,20 +16,16 @@
             background-color: aquamarine;
         }
         
-        #display {
-            padding: 20px;
-            margin: auto;
-            text-align: center;
-            background-image: url("/static/images/WhatsApp Image 2021-12-10 at 10.39.47 PM.jpeg");
-            background-repeat: no-repeat;
-            background-size: cover;
+        #display .h4 {
+            font-weight: bolder;
+            font-size: 30px;
+            text-shadow: 2px 2px grey;
         }
         
-        #display h2 {
-            font-weight: bolder;
-            font-size: 50px;
-            text-shadow: 2px 2px grey;
-            padding: 8px;
+        hr {
+            opacity: 1;
+            background-color: black;
+            border-bottom: 1px solid black;
         }
         
         .form-group {
@@ -76,50 +72,54 @@
         </div>
     </nav>
 
-    <div id="display" class="formsection">
-        <div style="background-color:aquamarine; ">
-            <h2>Register</h2>
-
-            <form id="f" class="forms" action="/register" method="POST" onsubmit="return validate()" enctype="multipart/form-data">
-                <div class="form-group">
-                    <p>Email: <input class="form-control form-control-lg" type="email" name="email"></p>
+    <div class="display pt-5" id="display" class="formsection">
+        <div style="background-color:aquamarine">
+            <p class="h4" style="text-align: center;">Register</p>
+            <form id="f" class="forms forms w-75 m-auto" action="/register" method="POST" onsubmit="return validate()" enctype="multipart/form-data">
+                <div class="mt-1 mb-3">
+                    <hr class="w-50 m-auto" />
                 </div>
-                <div class="form-group">
-                    <P>Password: <input class="form-control form-control-lg" type="password" name="password" id="password" required></p>
-                </div>
-                <div class="form-group">
-                    <p>Confirm Password: <input class="form-control form-control-lg" type="password" name="cpassword" id="cpassword"></p>
-                </div>
-                <div class="form-group">
-                    <p>First Name: <input class="form-control form-control-lg" type="text" name="firstName"></p>
-                </div>
-                <div class="form-group">
-                    <p>Last Name: <input class="form-control form-control-lg" type="text" name="lastName"></p>
-                </div>
-                <div class="form-group">
-                    <p>Address Line 1: <input class="form-control form-control-lg" type="text" name="address1"></p>
-                </div>
-                <div class="form-group">
-                    <p>Address Line 2: <input class="form-control form-control-lg" type="text" name="address2"></p>
-                </div>
-                <div class="form-group">
-                    <p>Zipcode: <input class="form-control form-control-lg" type="text" name="zipcode"></p>
-                </div>
-                <div class="form-group">
-                    <p>City: <input class="form-control form-control-lg" type="text" name="city"></p>
-                </div>
-                <div class="form-group">
-                    <p>State: <input class="form-control form-control-lg" type="text" name="state"></p>
-                </div>
-                <div class="form-group">
-                    <p>Country: <input class="form-control form-control-lg" type="text" name="country"></p>
-                </div>
-                <div class="form-group">
-                    <p>Phone Number: <input class="form-control form-control-lg" type="text" name="phone"></p>
-                </div>
-                <div class="form-group">
-                    <input type="submit" value="Register" class="btn btn-success mx-3 mx-lg-5">
-                    <a class="btn btn-success mx-lg-5 mt-lg-5 mb-lg-5" href="/loginForm">Login here</a>
+                <div class="w-75 m-auto">
+                    <div class="form-group">
+                        <p>Email: <input class="form-control " type="email" name="email"></p>
+                    </div>
+                    <div class="form-group">
+                        <P>Password: <input class="form-control " type="password" name="password" id="password" required></p>
+                    </div>
+                    <div class="form-group">
+                        <p>Confirm Password: <input class="form-control " type="password" name="cpassword" id="cpassword"></p>
+                    </div>
+                    <div class="form-group">
+                        <p>First Name: <input class="form-control " type="text" name="firstName"></p>
+                    </div>
+                    <div class="form-group">
+                        <p>Last Name: <input class="form-control " type="text" name="lastName"></p>
+                    </div>
+                    <div class="form-group">
+                        <p>Address Line 1: <input class="form-control " type="text" name="address1"></p>
+                    </div>
+                    <div class="form-group">
+                        <p>Address Line 2: <input class="form-control " type="text" name="address2"></p>
+                    </div>
+                    <div class="form-group">
+                        <p>Zipcode: <input class="form-control " type="text" name="zipcode"></p>
+                    </div>
+                    <div class="form-group">
+                        <p>City: <input class="form-control " type="text" name="city"></p>
+                    </div>
+                    <div class="form-group">
+                        <p>State: <input class="form-control " type="text" name="state"></p>
+                    </div>
+                    <div class="form-group">
+                        <p>Country: <input class="form-control " type="text" name="country"></p>
+                    </div>
+                    <div class="form-group">
+                        <p>Phone Number: <input class="form-control " type="text" name="phone"></p>
+                    </div>
+                    <div class="form-group" style="text-align: center;">
+                        <input type="submit" value="Register" class="btn btn-success mr-3 mx-lg-5">
+                        <a class="btn btn-success mx-lg-5 mt-lg-5 mb-lg-5" href="/loginForm">Login here</a>
+                    </div>
                 </div>
             </form>
         </div>

@@ -84,7 +84,7 @@
                 <hr>
                 <div class="d-flex pt-2">
                     <div class="justify-content-center">
-                        <img src="{{ url_for( 'static', filename='uploads/' + product[4] | string() + '.jpg') }}" class="img-thumbnail img-fluid" alt="{{product[1]}}">
+                        <img src="{{ url_for( 'static', filename='uploads/' + product[3]) }}" class="img-thumbnail img-fluid" alt="{{product[1]}}">
                         <a style="margin-left: 15px; color: red" href="/removeFromCart?productId={{product[0]}}">Remove</a>
                     </div>
                     <div>

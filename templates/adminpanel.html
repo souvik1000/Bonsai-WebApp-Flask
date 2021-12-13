@@ -49,7 +49,7 @@
 <body>
     <div id="adminpanel">
         <nav class="navbar navbar-expand-lg navbar-light" style="background-color: #45526e;">
-            <a class="navbar-brand text-white" href="/">BookBunglow</a>
+            <a class="navbar-brand text-white" href="/adminpanel?success_code=200">BookBunglow</a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
             </button>
@@ -78,11 +78,11 @@
                 {% include 'add.html' %}
             </div>
             <div id="search" class="collapse mt-5" style="text-align: center;">
-                <h2>Search Product For Editing</h2>
+                <h4 class="pb-2">Search Product For Editing</h4>
                 <form action="/editItem" method="POST">
                     <label>Product Name: </label>
                     <input type="text" name="productname" placeholder="Enter product name" />
-                    <input class="btn btn-success" type="submit" value="Edit Product" onsubmit="onclickevent()" />
+                    <input class="btn btn-success mt-2" type="submit" value="Edit Product" onsubmit="onclickevent()" />
                 </form>
             </div>
         </div>

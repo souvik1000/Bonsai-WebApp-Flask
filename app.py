@@ -528,6 +528,7 @@ def cart():
     for product in products:
         totalPrice += (product[2] * product[4])
         subTotalPrice.append((product[2] * product[4]))
+        print(product)
     return render_template("cart.html", products = products, totalPrice=totalPrice, subTotalPrice=subTotalPrice, loggedIn=loggedIn, firstName=firstName, noOfItems=noOfItems)
 
 @app.route("/removeFromCart")
